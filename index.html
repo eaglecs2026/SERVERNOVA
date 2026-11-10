@@ -148,6 +148,7 @@
   </div>
 </section>
 
+
 <section class="view" id="gta-sa">
   <div class="page-intro">
     <div class="eyebrow">OPEN WORLD MULTIPLAYER</div>
@@ -155,28 +156,60 @@
     <p>Discover multiplayer communities and roleplay worlds.</p>
   </div>
 
-  <div class="feature-grid">
-    <article class="feature-card">
-      <h3>SA-MP</h3>
-      <p>Classic San Andreas multiplayer communities.</p>
-      <span class="coming-label">INTEGRATION PLANNED</span>
-    </article>
-    <article class="feature-card">
-      <h3>open.mp</h3>
-      <p>Explore open.mp multiplayer servers.</p>
-      <span class="coming-label">INTEGRATION PLANNED</span>
-    </article>
-    <article class="feature-card">
-      <h3>MTA</h3>
-      <p>Discover Multi Theft Auto communities.</p>
-      <span class="coming-label">INTEGRATION PLANNED</span>
-    </article>
+  <div class="search-panel">
+    <label for="gtaSearch">SEARCH GTA SERVERS</label>
+
+    <div class="search-row">
+      <span>⌕</span>
+      <input id="gtaSearch" type="search"
+        placeholder="Search server name or IP address...">
+      <button class="button primary" id="gtaSearchBtn">SEARCH</button>
+    </div>
+
+    <div class="filters">
+      <select id="gtaPlatform">
+        <option value="">All platforms</option>
+        <option value="SA-MP">SA-MP</option>
+        <option value="open.mp">open.mp</option>
+        <option value="MTA">MTA</option>
+      </select>
+
+      <select id="gtaCountry">
+        <option value="">All countries</option>
+        <option value="Algeria">Algeria</option>
+        <option value="France">France</option>
+        <option value="Germany">Germany</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="table-wrap">
+    <div class="table-title">
+      <h2>GTA SERVER NETWORK</h2>
+      <span class="muted" id="gtaResultCount">0 results</span>
+    </div>
+
+    <div class="server-table">
+      <div class="table-head">
+        <span>SERVER</span>
+        <span>PLATFORM</span>
+        <span>COUNTRY</span>
+        <span>STATUS</span>
+      </div>
+
+      <div id="gtaServerRows">
+        <div class="notice">
+          No live servers connected yet. Server discovery integration is planned.
+        </div>
+      </div>
+    </div>
   </div>
 
   <div class="notice">
-    SERVER SEARCH AND LIVE PLAYER DATA WILL BE CONNECTED NEXT.
+    SA-MP · open.mp · MTA — Live server data will be connected through a backend.
   </div>
 </section>
+
       <section class="view" id="chat">
         <div class="page-intro"><div class="eyebrow">YOUR PEOPLE. YOUR GAMES.</div><h1>CHAT & <span class="accent">COMMUNITY</span></h1><p>A single community space for profiles, friends, groups and conversations.</p></div>
         <div class="chat-layout">
