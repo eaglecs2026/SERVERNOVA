@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="SERVERNOVA — The global Counter-Strike server community.">
+  <title>SERVERNOVA — Global Server Network</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">S</span><span>SERVER<span class="accent">NOVA</span><small>GLOBAL SERVER NETWORK</small></span></a>
+      <div class="side-label">MAIN MENU</div>
+      <nav>
+        <a class="nav-link active" href="#home" data-view="home"><span>⌂</span> Home</a>
+        <a class="nav-link" href="#servers" data-view="servers"><span>▦</span> Server Browser</a>
+        <a class="nav-link" href="#games" data-view="games"><span>◈</span> Games</a>
+        <a class="nav-link" href="#chat" data-view="chat"><span>◉</span> Chat & Community</a>
+        <a class="nav-link" href="#profile" data-view="profile"><span>◎</span> My Profile</a>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="status-card"><span class="online-dot"></span><div><b>Network status</b><small>Interface preview</small></div></div>
+        <div class="side-foot">BORN IN ALGERIA<br>BUILT FOR THE WORLD</div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div class="breadcrumb">SERVERNOVA <span>/</span> <b id="pageName">HOME</b></div>
+        <div class="top-actions">
+          <button class="icon-button" title="Notifications">♧</button>
+          <button class="user-chip"><span class="avatar">G</span><span>Guest</span><span class="chevron">⌄</span></button>
+        </div>
+      </header>
+
+      <section class="view active-view" id="home">
+        <div class="hero">
+          <div class="hero-content">
+            <div class="eyebrow"><span class="pulse"></span> GLOBAL GAMING COMMUNITY</div>
+            <h1>FIND YOUR<br><span class="accent">NEXT SERVER.</span></h1>
+            <p>Discover Counter-Strike servers, meet players and build your gaming community.</p>
+            <div class="hero-actions">
+              <a class="button primary" href="#servers" data-view="servers">EXPLORE SERVERS <span>↗</span></a>
+              <a class="button secondary" href="#chat" data-view="chat">OPEN COMMUNITY</a>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+            <div class="core">S<span>N</span></div>
+            <div class="art-tag tag-top">SERVER NETWORK <b>01</b></div>
+            <div class="art-tag tag-bottom"><i></i> CONNECT THE WORLD</div>
+          </div>
+          <div class="hero-grid"></div>
+        </div>
+
+        <div class="section-heading">
+          <div><div class="eyebrow">CHOOSE YOUR GAME</div><h2>GAME <span class="accent">NETWORK</span></h2></div>
+          <span class="muted">Select a game to explore its servers</span>
+        </div>
+        <div class="game-grid">
+          <a class="game-card cs16" href="#servers" data-game="Counter-Strike 1.6" data-view="servers"><div class="game-number">01 / CLASSIC</div><div class="game-card-bottom"><h3>COUNTER-STRIKE<br><span>1.6</span></h3><b>EXPLORE ↗</b></div></a>
+          <a class="game-card cz" href="#servers" data-game="Condition Zero" data-view="servers"><div class="game-number">02 / TACTICAL</div><div class="game-card-bottom"><h3>CONDITION<br><span>ZERO</span></h3><b>EXPLORE ↗</b></div></a>
+          <a class="game-card css" href="#servers" data-game="Counter-Strike: Source" data-view="servers"><div class="game-number">03 / SOURCE</div><div class="game-card-bottom"><h3>COUNTER-STRIKE<br><span>SOURCE</span></h3><b>EXPLORE ↗</b></div></a>
+          <a class="game-card cs2" href="#servers" data-game="Counter-Strike 2" data-view="servers"><div class="game-number">04 / NEXT GEN</div><div class="game-card-bottom"><h3>COUNTER-STRIKE<br><span>2</span></h3><b>EXPLORE ↗</b></div></a>
+        </div>
+
+        <div class="section-heading lower-heading">
+          <div><div class="eyebrow">DISCOVER</div><h2>COMMUNITY <span class="accent">HIGHLIGHTS</span></h2></div>
+        </div>
+        <div class="feature-grid">
+          <article class="feature-card"><span class="feature-icon">⌕</span><h3>Server discovery</h3><p>Search by IP, map, country or game. Find a server that fits your play style.</p></article>
+          <article class="feature-card"><span class="feature-icon">◉</span><h3>Player community</h3><p>Profiles, friends, private messages and gaming communities in one place.</p></article>
+          <article class="feature-card"><span class="feature-icon">⌁</span><h3>Server monitoring</h3><p>Track availability, player counts, ping and server history when connected.</p></article>
+        </div>
+      </section>
+
+      <section class="view" id="servers">
+        <div class="page-intro"><div class="eyebrow">DISCOVER THE NETWORK</div><h1>SERVER <span class="accent">BROWSER</span></h1><p>Find Counter-Strike servers around the world.</p></div>
+        <div class="search-panel">
+          <label for="serverSearch">SEARCH SERVERS</label>
+          <div class="search-row"><span>⌕</span><input id="serverSearch" type="search" placeholder="Search server name, IP, map or country..."><button class="button primary" id="searchBtn">SEARCH</button></div>
+          <div class="filters"><select id="gameFilter"><option value="">All Counter-Strike games</option><option>Counter-Strike 1.6</option><option>Condition Zero</option><option>Counter-Strike: Source</option><option>Counter-Strike 2</option></select><select id="statusFilter"><option value="">Any status</option><option>Online</option><option>Offline</option></select><select id="countryFilter"><option value="">All countries</option><option>Algeria</option><option>France</option><option>Germany</option></select></div>
+        </div>
+        <div class="table-wrap"><div class="table-title"><h2>SERVER LIST</h2><span class="muted" id="resultCount">Demo entries · not live data</span></div>
+          <div class="server-table"><div class="table-head"><span>SERVER</span><span>GAME / MAP</span><span>PLAYERS</span><span>STATUS</span></div>
+            <div id="serverRows">
+              <div class="server-row" data-search="dz classic dust2 1.6 algeria 192.168.1.10"><div><b>DZ Classic Arena</b><small>192.168.1.10:27015 · Algeria</small></div><span>CS 1.6 <small>de_dust2</small></span><span>— / 32</span><span class="status-pill demo">DEMO</span></div>
+              <div class="server-row" data-search="source community inferno france 203.0.113.10"><div><b>Source Community</b><small>203.0.113.10:27015 · France</small></div><span>CS: Source <small>de_inferno</small></span><span>— / 24</span><span class="status-pill demo">DEMO</span></div>
+              <div class="server-row" data-search="global tactical mirage cs2 germany 203.0.113.20"><div><b>Global Tactical</b><small>203.0.113.20:27015 · Germany</small></div><span>CS2 <small>de_mirage</small></span><span>— / 20</span><span class="status-pill demo">DEMO</span></div>
+            </div>
+          </div>
+          <div class="notice">These are sample rows for the design only. Live server status requires a game-server query service and backend.</div>
+        </div>
+      </section>
+
+      <section class="view" id="games">
+        <div class="page-intro"><div class="eyebrow">GAME LIBRARY</div><h1>GAMES <span class="accent">NETWORK</span></h1><p>Choose a title and explore its community.</p></div>
+        <div class="game-grid game-grid-page">
+          <a class="game-card cs16" href="#servers" data-game="Counter-Strike 1.6" data-view="servers"><div class="game-number">01 / CLASSIC</div><div class="game-card-bottom"><h3>COUNTER-STRIKE<br><span>1.6</span></h3><b>OPEN ↗</b></div></a>
+          <a class="game-card cz" href="#servers" data-game="Condition Zero" data-view="servers"><div class="game-number">02 / TACTICAL</div><div class="game-card-bottom"><h3>CONDITION<br><span>ZERO</span></h3><b>OPEN ↗</b></div></a>
+          <a class="game-card css" href="#servers" data-game="Counter-Strike: Source" data-view="servers"><div class="game-number">03 / SOURCE</div><div class="game-card-bottom"><h3>COUNTER-STRIKE<br><span>SOURCE</span></h3><b>OPEN ↗</b></div></a>
+          <a class="game-card cs2" href="#servers" data-game="Counter-Strike 2" data-view="servers"><div class="game-number">04 / NEXT GEN</div><div class="game-card-bottom"><h3>COUNTER-STRIKE<br><span>2</span></h3><b>OPEN ↗</b></div></a>
+        </div>
+        <div class="notice">Half-Life titles can be added as a separate Valve Games category in a later planning step.</div>
+      </section>
+
+      <section class="view" id="chat">
+        <div class="page-intro"><div class="eyebrow">YOUR PEOPLE. YOUR GAMES.</div><h1>CHAT & <span class="accent">COMMUNITY</span></h1><p>A single community space for profiles, friends, groups and conversations.</p></div>
+        <div class="chat-layout">
+          <aside class="chat-menu"><button class="chat-tab active">◉ Feed</button><button class="chat-tab">✉ Messages</button><button class="chat-tab">♧ Friends</button><button class="chat-tab">▤ Groups & Servers</button><button class="chat-tab">◎ Profiles</button></aside>
+          <div class="chat-main"><div class="chat-coming"><div class="chat-symbol">◉</div><h2>YOUR COMMUNITY <span class="accent">STARTS HERE</span></h2><p>Posts, direct messages, friends and gaming groups will live in this one space.</p><div class="coming-label">CHAT PREVIEW · BACKEND NOT CONNECTED</div></div></div>
+        </div>
+      </section>
+
+      <section class="view" id="profile">
+        <div class="page-intro"><div class="eyebrow">PLAYER IDENTITY</div><h1>MY <span class="accent">PROFILE</span></h1><p>Your gaming identity across the SERVERNOVA network.</p></div>
+        <div class="profile-card"><div class="profile-avatar">G</div><div><h2>Guest Player</h2><p class="muted">Sign-in and player profiles will be connected in a later version.</p><span class="coming-label">GUEST PREVIEW</span></div></div>
+      </section>
+
+      <footer><span>© 2026 SERVERNOVA</span><span>THE NEXT LEVEL OF COUNTER-STRIKE</span><span>ALGERIA · WORLDWIDE</span></footer>
+    </main>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
