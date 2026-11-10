@@ -148,3 +148,12 @@
     grid-template-columns:repeat(2,minmax(0,1fr));
   }
 }
+/* COMMUNITY SECTION SWITCHING */
+
+.chat-main .feature-card[id^="community-"]{
+  display:none;
+}
+
+.chat-main .feature-card.community-active{
+  display:block;
+}
