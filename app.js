@@ -259,16 +259,13 @@ document.getElementById('favoriteServer').addEventListener('click', () => {
   updateFavoriteButton();
 });
 
-// Community preview tabs
-document.querySelectorAll('.chat-tab').forEach(tab => {
-  tab.addEventListener('click', () => {
-    document.querySelectorAll('.chat-tab').forEach(item => {
-      item.classList.remove('active');
-    });
 
-    tab.classList.add('active');
-  });
-});
+/* COMMUNITY SECTION SWITCHING */
 
-filterServers();
+.chat-main .feature-card[id^="community-"]{
+  display:none;
+}
 
+.chat-main .feature-card.community-active{
+  display:block;
+}
