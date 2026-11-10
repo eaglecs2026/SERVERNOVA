@@ -64,3 +64,87 @@
   object-fit:contain;
   opacity:1;
 }
+/* SERVERNOVA COMMUNITY DESIGN */
+
+.chat-layout{
+  display:grid;
+  grid-template-columns:220px minmax(0,1fr);
+  gap:22px;
+  margin-top:25px;
+  align-items:start;
+}
+
+.chat-menu{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.chat-tab{
+  display:block;
+  color:var(--muted);
+  text-decoration:none;
+  padding:13px;
+  border:1px solid transparent;
+  border-radius:8px;
+  transition:.2s;
+}
+
+.chat-tab:hover,
+.chat-tab.active{
+  color:var(--text);
+  background:var(--panel2);
+  border-color:var(--accent);
+}
+
+.chat-main{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  min-width:0;
+}
+
+.chat-main .table-title{
+  margin-bottom:4px;
+}
+
+.chat-main .feature-card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:24px;
+  transition:border-color .2s,transform .2s;
+}
+
+.chat-main .feature-card:hover{
+  border-color:var(--accent);
+  transform:translateY(-2px);
+}
+
+.chat-main .feature-card h2{
+  margin:12px 0;
+}
+
+.chat-main .feature-card p{
+  color:var(--muted);
+  line-height:1.7;
+}
+
+.chat-main .notice{
+  margin-top:16px;
+}
+
+@media(max-width:750px){
+  .chat-layout{
+    grid-template-columns:1fr;
+  }
+
+  .chat-menu{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+}
