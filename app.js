@@ -260,12 +260,74 @@ document.getElementById('favoriteServer').addEventListener('click', () => {
 });
 
 
-/* COMMUNITY SECTION SWITCHING */
 
-.chat-main .feature-card[id^="community-"]{
-  display:none;
+/* SERVERNOVA COMMUNITY FEED */
+
+const postInput = document.getElementById('communityPostInput');
+const publishPostBtn = document.getElementById('publishPostBtn');
+const feedList = document.getElementById('communityFeedList');
+
+function loadCommunityPosts() {
+  const posts = JSON.parse(
+    localStorage.getItem('servernova-posts') || '[]'
+  );
+
+  feedList.innerHTML = '';
+
+  if (posts.length === 0) {
+    feedList.innerHTML = `
+      <div class="notice">
+        No posts yet. Be the first to publish!
+      </div>
+    `;
+    return;
+  }
+
+  posts.forEach(post => {
+    const article = document.createElement('article');
+    article.className = 'feature-card community-post';
+
+    const title = document.createElement('div');
+    title.className = 'eyebrow';
+    title.textContent = 'SERVERNOVA PLAYER';
+
+    const content = document.createElement('p');
+    content.textContent = post.text;
+
+    const date = document.createElement('small');
+    date.className = 'muted';
+    date.textContent = post.date;
+
+    article.append(title, content, date);
+    feedList.appendChild(article);
+  });
 }
 
-.chat-main .feature-card.community-active{
-  display:block;
-}
+publishPostBtn.addEventListener('click', () => {
+  const text = postInput.value.trim();
+
+  if (!text) {
+    alert('Please write something before publishing.');
+    return;
+  }
+
+  const posts = JSON.parse(
+    localStorage.getItem('servernova-posts') || '[]'
+  );
+
+  posts.unshift({
+    text: text,
+    date: new Date().toLocaleString()
+  });
+
+  localStorage.setItem(
+    'servernova-posts',
+    JSON.stringify(posts)
+  );
+
+  postInput.value = '';
+  loadCommunityPosts();
+});
+
+loadCommunityPosts();
+
