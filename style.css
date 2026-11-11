@@ -157,3 +157,60 @@
 .chat-main .feature-card.community-active{
   display:block;
 }
+
+/* SERVERNOVA COMMUNITY FEED */
+
+.community-post-box {
+  background: #0b1214;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.community-post-box textarea {
+  width: 100%;
+  min-height: 110px;
+  resize: vertical;
+  background: #080e10;
+  border: 1px solid #2b393e;
+  border-radius: 6px;
+  padding: 14px;
+  color: white;
+  font: inherit;
+  font-size: 12px;
+  outline: none;
+}
+
+.community-post-box textarea:focus {
+  border-color: var(--green);
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.post-actions button {
+  background: var(--green);
+  color: #080b0d;
+  border: 0;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.post-actions button:hover {
+  filter: brightness(1.15);
+}
+
+.community-feed-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
